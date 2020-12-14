@@ -1,6 +1,4 @@
-import React, { useState, useEffect, Component } from 'react'
-import { useConstructor } from '../../hooks'
-// import PropTypes from 'prop-types'
+import React, { Component } from 'react'
 import styles from './GetMovieAll.module.scss'
 import { JsonToTable } from 'react-json-to-table'
 import axios from 'axios'

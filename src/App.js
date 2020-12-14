@@ -22,14 +22,10 @@ function App () {
     if (token) {
       setAccessToken(token)
     }
-    // setAccessToken('TOKEN')
     const usr = localStorage.getItem('user')
     if (usr) {
       setUser(usr)
     }
-    // setUser({
-    //   name: 'Natalie'
-    // })
   })
   return (
     <Router>

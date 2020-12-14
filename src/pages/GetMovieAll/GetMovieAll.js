@@ -16,31 +16,35 @@ class GetMovieAll extends Component {
   }
 
   async getData () {
-    const res = await axios.get(url + '/movies')
-    if (res.status === 200) {
-      var newMovies = res.data.movies.map(el => {
-        return {
-          id: el._id,
-          title: el.title,
-          director: el.director,
-          rating: el.rating,
-          summary: el.summary
-        }
-      })
-      this.setState({
-        movies: newMovies,
-        found: true,
-        loaded: true
-      })
-    } else if (res.status === 500) {
-      this.setState({
-        error: true,
-        loaded: true
-      })
-    } else if (res.status === 404) {
-      this.setState({
-        loaded: true
-      })
+    try {
+      const res = await axios.get(url + '/movies')
+      if (res.status === 200) {
+        var newMovies = res.data.movies.map(el => {
+          return {
+            id: el._id,
+            title: el.title,
+            director: el.director,
+            rating: el.rating,
+            summary: el.summary
+          }
+        })
+        this.setState({
+          movies: newMovies,
+          found: true,
+          loaded: true
+        })
+      }
+    } catch (e) {
+      if (e.response.status === 500) {
+        this.setState({
+          error: true,
+          loaded: true
+        })
+      } else if (e.response.status === 404) {
+        this.setState({
+          loaded: true
+        })
+      }
     }
   }
 

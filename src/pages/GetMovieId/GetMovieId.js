@@ -85,7 +85,7 @@ const GetMovieId = () => {
         />
         <Button
           className={styles.submit}
-          bgColor='#24b300'
+          bgColor='#660080'
           textColor='white'
           onClick={() => onSubmit()}
           title='Find'

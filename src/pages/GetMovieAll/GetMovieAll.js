@@ -53,7 +53,19 @@ class GetMovieAll extends Component {
       <span>
         {this.state.loaded && this.state.found ? (
           <div className={styles.container}>
-            <JsonToTable json={this.state.movies} />
+            <div className={styles.title}>All Movies</div>
+            <div
+              style={{
+                display: 'flex',
+                height: '200px',
+                width: '80%',
+                marginTop: '30px'
+              }}
+            >
+              <div style={{ flexGrow: 1 }}>
+                <JsonToTable json={this.state.movies} />
+              </div>
+            </div>
           </div>
         ) : this.state.loaded && this.state.error ? (
           <div className={styles.container}>Error Gan</div>

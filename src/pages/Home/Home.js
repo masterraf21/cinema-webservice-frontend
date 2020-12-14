@@ -14,7 +14,9 @@ const Home = ({ user }) => {
   })
   return (
     <>
-      <div className={styles.container}>Hello {name}</div>
+      <div className={styles.container}>
+        <div className={styles.title}>Hello Stranger</div>
+      </div>
     </>
   )
 }

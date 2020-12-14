@@ -15,7 +15,7 @@ import {
 
 function App () {
   const [accessToken, setAccessToken] = useState(null)
-  const [user, setUser] = useState(null)
+  const [user, setUser] = useState({})
 
   useEffect(() => {
     const token = localStorage.getItem('token')
@@ -27,6 +27,9 @@ function App () {
     if (usr) {
       setUser(usr)
     }
+    // setUser({
+    //   name: 'Natalie'
+    // })
   })
   return (
     <Router>

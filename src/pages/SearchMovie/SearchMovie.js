@@ -34,7 +34,7 @@ const SearchMovie = () => {
           }
         })
         if (res.status === 200) {
-          var newMovies = res.data.movies.map(el => {
+          const newMovies = res.data.movies.map(el => {
             return {
               id: el._id,
               title: el.title,
@@ -92,7 +92,7 @@ const SearchMovie = () => {
             bgColor='#660080'
             textColor='white'
             onClick={() => window.location.reload()}
-            title='Reload'
+            title='Search Again'
           />
         </div>
       ) : (
